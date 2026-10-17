@@ -17,16 +17,22 @@
         <p class="tagline">A place to store thoughts on stuff....</p>
          <nav>
             <a href="index.html">About</a>
-            <details>
+            <details open>
               <summary>Knowledge Base</summary>
-              <details>
+              <details open>
               <summary class = "sub-menu">Cheatsheets</summary>
                 <a href = "css.html">CSS</a>
                 <a href = "azure.html">Azure</a>
-                <a href = "security.html">Security</a>
+                <details>
+                  <summary class="sub-menu">Security</summary>
+                  <details>
+                    <summary class = "sub-menu">Web Security</summary>
+                    <a href="sql-injection.html">SQL Injections</a>
+                  </details>                  
+                </details>
               </details>
             </details>
-            <a href="blog.html" class = "active">Blog</a>
+            <a href="blog.html">Blog</a>
         </nav>
       </div>
       <div class="social">

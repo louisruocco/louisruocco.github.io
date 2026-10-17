@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Ruocco | SQL Injections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="./main.css" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <header>
+      <div>
+        <h1>Cheatsheet | SQL Injection</h1>
+        <p class="tagline">All things SQL Injection...</p>
+        <nav>
+            <a href="index.html">About</a>
+            <details open>
+              <summary >Knowledge Base</summary>
+                <details open>
+                  <summary class="sub-menu">Security</summary>
+                  <details open>
+                    <summary class = "sub-menu">Web Security</summary>
+                    <a href="sql-injection.html" class = "active">SQL Injections</a>                
+                </details>
+              </details>
+            </details>
+            <a href="blog.html">Blog</a>
+        </nav>
+      </div>
+      <div class="social">
+        <a href="https://github.com/louisruocco" target="_blank">GitHub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+    <main>
+      <section id="Content">
+        <p>SQL Injection attacks are where SQL can be run on the website to find hidden data and bypass logins</p>
+        <h2>Methods</h2>
+        <ul>
+          <li>Start by using a single quote in a login box, or in the URL itself to see if the site is susceptible to SQL Injection attacks:</li>
+          <pre><code>'</code></pre>
+          <ul>
+            <li>If an <b>internal Server Error</b> error message is sent back, then there is a strong chance the site can be attacked with SQL injection</li>
+          </ul>
+        </ul>
+        <h3>Bypassing Login Pages</h3>
+        <ul>
+          <li>Typically, the backend T-SQL would look similar to this: </li>
+          <ul>
+            <li><pre><code>SELECT username FROM users WHERE firstname='administrator'</code></pre></li>
+          </ul>
+          <li>This won't work in the username box though, so try the below un the username box: </li>
+          <ul>
+            <li><pre><code>administrator'--</code></pre></li>
+            <li>Put anything in the password box since the above will make the backend not check for a password, bypassing it</li>
+          </ul>
+          <li>Variations of "administrator" should be attempted to try and break in</li>
+        </ul>
+      </section> 
+  </div>
+</body>
+</html>
